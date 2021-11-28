@@ -1,0 +1,17 @@
+# see interfaces(5)
+source /etc/network/interfaces.d/*
+
+# loopback interface
+auto lo
+iface lo inet loopback
+
+# first interface
+allow-hotplug ens3
+iface ens3 inet dhcp
+allow-hotplug enp0s3
+iface enp0s3 inet dhcp
+
+auto enp0s8
+iface enp0s8 inet static
+ address 172.23.38.129
+ netmask 255.255.255.128
